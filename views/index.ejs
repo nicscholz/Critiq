@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="critiq">
+   <% include partials/head.ejs %>
+  <body>
+ <nav>
+   <div class="nav-wrapper  blue lighten-3">
+      <img src="/images/critiqlogowname.png" class="navbarlogo" />
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <!-- <h3>critiq</h3> -->
+       <li><a href="index.ejs">Home</a></li>
+       <li><a href="contact.ejs">Contact</a></li>
+       <li><a href="about.ejs">About</a></li>
+     </ul>
+   </div>
+ </nav>
+
+ <img src="/images/bg.png" id="bg" />
+
+ <br>
+
+    <section ng-controller="mainController">
+      <div class="container" id="bigcontainer">
+         <div class="row">
+            <div class="logincontainer">
+              <div class="join" ng-hide='logged'>
+                 <img src="/images/critiqlogo.png" id="frontlogo" />
+              <h4 class="prompt">Sign Up</h4>
+                 <form ng-submit="createUser(user)" >
+                   <input type="text" ng-model="user.username" placeholder=" new username">
+                   <input type="text" ng-model="user.password" placeholder=" new user password">
+                   <input class="waves-effect waves-light btn blue lighten-3" type="submit">
+                 </form>
+               </div>
+               <div class="logIn" ng-hide='logged'>
+                 <h4 class="prompt">Log In</h4>
+                 <form ng-submit="logIn(username, password)">
+                   <input type="text" ng-model="username" placeholder="username">
+                   <input type="text" ng-model="password" placeholder="password">
+                   <input class="waves-effect waves-light btn blue lighten-3" type="submit">
+                 </form>
+                 </div>
+                </div>
+              </div>
+           </div>
+        </div>
+      </div>
+   </div>
+
+      <div class="posts" ng-show='logged'>
+        <button class="waves-effect waves-light btn blue lighten-3" type="button" id=" logout" ng-click=logOut()>Log Out</button>
+
+         <% include partials/designtopics.ejs %>
+
+
+
+      <div ng-show="showChat">
+         <div id="chat" >
+            <div ng-repeat="chat in chats">
+               <h6 id="chatusername"> {{ chat.username }} </h6>
+               <p id="chatmessage"> {{ chat.message }} </p>
+            </div>
+         </div>
+
+          <form ng-submit="sendChat()" id="send-message">
+             <input ng-model="newChat.message" id="message"></input>
+             <input type="submit"></input>
+          </form>
+      </div>
+
+
+        <!-- old code for blog posts -->
+
+
+        <!-- <form ng-submit=newPost(post) ng-hide="searchOnly">
+          <input class="post-title" type="text" ng-model="post.title" placeholder="Title"><br>
+          <textarea class="post-content" ng-model="post.content"></textarea><br>
+          <input class="logger" type="submit">
+        </form>
+        <input type="text" ng-model="query" placeholder="search posts">
+        <div id="posts-container">
+          <div class='post' ng-repeat="post in posts | filter:query">
+            <strong class="post-title">{{post.title}} | By: {{post.author}}</strong>
+            <div class="inner-post">
+              <p>{{post.content}}</p>
+
+
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+    </section>
+
+  </body>
+</html>

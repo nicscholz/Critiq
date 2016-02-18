@@ -1,0 +1,64 @@
+.navbarlogo {
+   height: 40px;
+   margin-left: 10px;
+   margin-top: 10px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#bg
+{
+   position:fixed;
+   z-index: -5999;
+}
+
+#send-message{
+
+}
+
+#frontlogo{
+   width: 25%;
+   margin-left: 37.5%;
+   margin-right: 37.5%;
+}
+
+#loginblock{
+   background-color: whitesmoke;
+   height: 500px;
+   width: 500px;
+   box-shadow: 0 40px 100px rgba(0,0,0,.2);
+   text-align: center;
+   width: 30%;
+   padding: 20px;
+   z-index: 1;
+}
+
+#chat {
+   background-color: whitesmoke;
+   height: 500px;
+   width: 500px;
+   box-shadow: 0 40px 100px rgba(0,0,0,.2);
+   overflow: scroll;
+   opacity: 0.7;
+   margin-left: 10%;
+   z-index: 2;
+}
+
+#topicpic{
+   height: 100%;
+   width: 50%;
+   display:inline-block;
+}
+
+#log-out {
+  float: right;
+  position: relative;
+  right: 40px;
+  top: 2px;
+}
+
+#send-message{
+
+}

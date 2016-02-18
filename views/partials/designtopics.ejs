@@ -1,0 +1,10 @@
+<!-- <div class="container"> -->
+<!-- Section -->
+<div class="row" ng-hide="showChat">
+   <a ng-repeat="topic in topics" ng-click="initChat($index)">
+      <div>
+         <label for="">{{topic.name}}</label>
+         <img ng-src="{{topic.url}}" id="topicpic">
+      </div>
+   </a>
+</div>
